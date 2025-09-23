@@ -14,8 +14,8 @@ const TabContainer = styled.div`
 `;
 
 const Icon = styled.img`
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
 `;
 
 const Tab = ({ title, icon, active, url, onClick }) => {

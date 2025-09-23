@@ -9,7 +9,7 @@ const TabsContainer = styled.div`
     align-items: center;
     gap: 12px;
     padding: 12px 4px;
-    width: 56px;
+    width: 50px;
 `;
 
 const Nav = ({ currentTab, setCurrentTab, tabContent }) => {
