@@ -1,9 +1,15 @@
 export default [
     {
-        id: "martainsonair",
-        title: "Martian On Air",
-        icon: "martiansonair.png",
+        id: "martainsonairciorapel",
+        title: "Martians On Air",
+        icon: "ciorapel.png",
         url: "https://martiansonair.danzaharia.com/ciorapel"
+    },
+    {
+        id: "martiansonairgansito",
+        title: "Martians On Air",
+        icon: "gansito.png",
+        url: "https://martiansonair.danzaharia.com/gansito"
     },
     {
         id: "homeassistant",
