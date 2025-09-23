@@ -21,7 +21,7 @@ const Icon = styled.img`
 const Tab = ({ title, icon, active, url, onClick }) => {
     return (
         <TabContainer active={active} onClick={onClick}>
-            <Icon src={`/icons/${icon}`} alt={title}/>
+            <Icon src={icon} alt={title}/>
         </TabContainer>
     );
 };
