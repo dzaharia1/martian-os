@@ -26,8 +26,8 @@ function App() {
         currentTab={currentTab}
         setCurrentTab={setCurrentTab}
         tabContent={Tabs} />
-      {Tabs.map((tab) => (
-        tab.id === currentTab ? <TabContent url={tab.url} /> : null
+      {Tabs.map((tab, key) => (
+        tab.id === currentTab ? <TabContent url={tab.url} key={key} /> : null
       ))}
     </Page>
   )

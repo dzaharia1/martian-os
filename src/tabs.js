@@ -3,7 +3,7 @@ export default [
         id: "homeassistant",
         title: "Home Assistant",
         icon: "homeassistant.svg",
-        url: "http://homeassistant.local:8123"
+        url: "https://home.danzaharia.com"
     },
     {
         id: "martainsonair",
