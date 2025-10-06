@@ -9,9 +9,10 @@ const TabsContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 12px;
-    padding: 12px 4px;
+    padding: 0 4px 0 4px;
     width: 50px;
     height: 100%;
+    gap: 0;
 `;
 
 const TabsList = styled.div`
@@ -19,7 +20,6 @@ const TabsList = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
     flex-grow: 1;
     gap: 12px;
 `;
@@ -29,8 +29,8 @@ const ClockContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     font-size: 24px;
+    padding: 8px 0;
     color: ${props => props.offset ? '#000' : '#fff'};
-    padding: 12px 0;
 
     p {
         margin: 0;
