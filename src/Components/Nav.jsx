@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Tab from "./Tab"
 import styled from "styled-components";
 
@@ -10,20 +11,70 @@ const TabsContainer = styled.div`
     gap: 12px;
     padding: 12px 4px;
     width: 50px;
+    height: 100%;
+`;
+
+const TabsList = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-grow: 1;
+    gap: 12px;
+`;
+
+const ClockContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 24px;
+    color: ${props => props.offset ? '#000' : '#fff'};
+    padding: 12px 0;
+
+    p {
+        margin: 0;
+        text-align: center;
+        font-family: 'Noto Sans', sans-serif;
+        font-weight: 600;
+
+        &:last-child {
+            margin-top: -8px;
+        }
+    }
 `;
 
 const Nav = ({ currentTab, setCurrentTab, tabContent }) => {
+    const [time, setTime] = useState(new Date());
+
+    useEffect(() => {
+        const formatTime = (time) => {
+            return {
+                hour: ((time.getHours() % 12) === 0 ? 12 : (time.getHours() % 12)).toString().padStart(2, '0'),
+                minute: time.getMinutes().toString().padStart(2, '0')
+            };
+        };
+        const interval = setInterval(() => {
+            setTime(formatTime(new Date()));
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <TabsContainer>
-            {tabContent.map((tab, index) => (
-                <Tab
+            <ClockContainer offset><p>{time.hour}</p><p>{time.minute}</p></ClockContainer>
+            <TabsList>
+                {tabContent.map((tab, index) => (
+                    <Tab
                     key={index}
                     title={tab.title}
                     icon={tab.icon}
                     active={currentTab === tab.id}
                     onClick={() => setCurrentTab(tab.id)}
-                />
-            ))}
+                    />
+                ))}
+            </TabsList>
+            <ClockContainer><p>{time.hour}</p><p>{time.minute}</p></ClockContainer>
         </TabsContainer>
     )
 };
