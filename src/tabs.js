@@ -12,6 +12,12 @@ export default [
         url: "https://martiansonair.danzaharia.com/gansito"
     },
     {
+        id:"focustimer",
+        title: "Focus Timer",
+        icon: "focus-timer.png",
+        url: "https://focus-timer.adanmade.app"
+    },
+    {
         id: "homeassistant",
         title: "Home Assistant",
         icon: "homeassistant.svg",

@@ -6,7 +6,7 @@ import styled from "styled-components";
 const TabsContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 12px;
     padding: 0 4px 0 4px;
@@ -18,28 +18,29 @@ const TabsContainer = styled.div`
 const TabsList = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-grow: 1;
     gap: 12px;
+    padding-top: 16px;
 `;
 
 const ClockContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 24px;
     padding: 8px 0;
     color: ${props => props.offset ? '#000' : '#fff'};
-
+    
     p {
         margin: 0;
         text-align: center;
         font-family: 'Noto Sans', sans-serif;
         font-weight: 600;
+        font-size: 36px;
 
         &:last-child {
-            margin-top: -8px;
+            margin-top: -14px;
         }
     }
 `;
@@ -62,7 +63,6 @@ const Nav = ({ currentTab, setCurrentTab, tabContent }) => {
 
     return (
         <TabsContainer>
-            <ClockContainer offset><p>{time.hour}</p><p>{time.minute}</p></ClockContainer>
             <TabsList>
                 {tabContent.map((tab, index) => (
                     <Tab
