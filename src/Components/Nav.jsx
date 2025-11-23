@@ -45,7 +45,7 @@ const ClockContainer = styled.div`
     }
 `;
 
-const Nav = ({ currentTab, setCurrentTab, tabContent }) => {
+const Nav = ({ currentTab, tabClickHandler, tabContent, socket }) => {
     const [time, setTime] = useState(new Date());
 
     useEffect(() => {
@@ -67,10 +67,10 @@ const Nav = ({ currentTab, setCurrentTab, tabContent }) => {
                 {tabContent.map((tab, index) => (
                     <Tab
                     key={index}
-                    title={tab.title}
-                    icon={tab.icon}
-                    active={currentTab === tab.id}
-                    onClick={() => setCurrentTab(tab.id)}
+                    tab={tab}
+                    socket={socket}
+                    active={currentTab.id === tab.id}
+                    onClick={() => tabClickHandler(tab)}
                     />
                 ))}
             </TabsList>

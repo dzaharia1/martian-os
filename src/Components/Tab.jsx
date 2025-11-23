@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import LanguageTab from './LanguageTab';
 
 const TabContainer = styled.div`
     display: flex;
@@ -18,12 +19,20 @@ const Icon = styled.img`
     height: 32px;
 `;
 
-const Tab = ({ title, icon, active, url, onClick }) => {
-    return (
-        <TabContainer active={active} onClick={onClick}>
-            <Icon src={icon} alt={title}/>
-        </TabContainer>
-    );
+const Tab = ({ tab, active, onClick, socket }) => {
+    if (tab.type === "app") {
+        return (
+            <TabContainer active={active}>
+                {tab.appName === "LanguageTab" && <LanguageTab icon={tab.icon} socket={socket} />}
+            </TabContainer>
+        );
+    } else {
+        return (
+            <TabContainer active={active} onClick={onClick}>
+                <Icon src={tab.icon} alt={tab.title}/>
+            </TabContainer>
+        );
+    }   
 };
 
 
