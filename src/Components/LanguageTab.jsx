@@ -9,12 +9,15 @@ const LanguageTabContainer = styled.button`
     gap: 8px;
     background: none;
     outline: none;
-    border: none;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
 `;
 
 const Icon = styled.img`
     width: 38px;
     height: 38px;
+    margin: -6px;
 `;
 
 const LanguageTab = ({ icon, socket }) => {
