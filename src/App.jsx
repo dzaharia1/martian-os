@@ -20,7 +20,7 @@ background-color: #000;
 `;
 
 function App() {
-  const socket = io(`${import.meta.env.VITE_SOCKET_URL}:${import.meta.env.VITE_SOCKET_PORT}`);
+  const socket = io(import.meta.env.VITE_SOCKET_URL);
   const [currentTab, setCurrentTab] = useState(Tabs[0]);
 
   const tabClickHandler = (newTab) => {
